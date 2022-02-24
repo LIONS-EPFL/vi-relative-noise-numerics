@@ -1,5 +1,6 @@
-# VIs with relative noise
+# Variational inequalities under different noise profiles
 
+This the code for [_Sifting through the noise: Universal first-order methods for stochastic variational inequalities_](https://infoscience.epfl.ch/record/289992/files/sifting_through_the_noise_univ-Supplementary%20Material.pdf) at NeurIPS 2021.
 
 ## Setup
 
@@ -90,15 +91,3 @@ for config in configs:
 figs, axes = plot_kelly(kelly, metrics_dict, T, num_points=1000)
 savefigs("example", figs)
 ```
-
-## Preparation
-
-> **Note**: This was only a problem prior to introducing the `num_points` limit in `plot_kelly`.
-
-To avoid humongous files in the writeup we can convert them to png (in case they were not generated):
-
-```
-find . -maxdepth 1 -type f -name '*.pdf' -exec pdftoppm -r 300 -png {} {} \;
-```
-
-This requires poppler on macOS which can be install with `brew install poppler`.
